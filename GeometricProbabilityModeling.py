@@ -13,8 +13,8 @@ squareProb = squareArea/wallArea
 print(f"Площадь стены: {wallArea}")
 print(f"Площадь мешени: {targetArea}")
 print(f"Площадь вписанного квадрата: {squareArea}")
-print(f"Вероятьночть попадания в круг: {teorProb}")
-print(f"Вероятьночть попадания в квадрат: {squareProb}")
+print(f"Вероятьность попадания в круг: {teorProb}")
+print(f"Вероятьность попадания в квадрат: {squareProb}")
 
 numDarts = int(input(f"Введите колтичество дротиков"))
 x = np.random.uniform(-sideLength/2, sideLength/2, numDarts)
