@@ -27,8 +27,8 @@ squareHit = np.sum(inSquare)
 simCircleProb = circleHit /numDarts
 simSquareProb = squareHit /numDarts
 
-print(f"Смоделированная вероятность попадания в круг {simCircleProb}")
-print(f"Смоделированная вероятность попадания в квадрат Х {simSquareProb}")
+print(f"Смоделированная вероятность попадания в круг: {simCircleProb}")
+print(f"Смоделированная вероятность попадания в квадрат: {simSquareProb}")
 
 plt.figure(figsize=(8,8))
 outside = ~inCircle
