@@ -1,16 +1,34 @@
-from random import sample
+from random import sample, randint
 import plotly.graph_objs as go
 import numpy as np
 from scipy.special import comb
 def random_combination(redBalls, blueBalls, targetRed, targetBlue):
     urna = ['R'] * redBalls + ['B'] * blueBalls
     return sample(urna, targetRed + targetBlue)
+while True:
+    var = int(input(f"Выбиерите варинат заполнения значений:\n"
+          f"1 - ввод с клавиатуры\n"
+          f"2 - заполнение случайными числами"))
+    if var==1:
 
-redBalls = int(input("Введите количество красных шаров:"))
-blueBalls = int(input("Введите количество синих шаров:"))
-targetRed = int(input("Введите количество красных вынимаемых шаров:"))
-targetBlue = int(input("Введите количество синих вынимаемых шаров:"))
+        redBalls = int(input("Введите количество красных шаров:"))
+        blueBalls = int(input("Введите количество синих шаров:"))
+        targetRed = int(input("Введите количество красных вынимаемых шаров:"))
+        targetBlue = int(input("Введите количество синих вынимаемых шаров:"))
+        break
+    elif var==2:
+        redBalls = randint(2, 10)
+        blueBalls = randint(2, 10)
+        targetRed = randint(1, (redBalls+blueBalls)//2)
+        targetBlue = randint(1, (redBalls+blueBalls)//2)
+        break
+    else:
+        print("Некорректный ввод повторите попытку")
 
+print(f"Количество красных шаров: {redBalls}")
+print(f"Количество синих шаров: {blueBalls}")
+print(f"Количество красных вынимаемых шаров: {targetRed}")
+print(f"Количество синих вынимаемых шаров: {targetBlue}")
 N_values = np.array(range(10, 10001, 50))
 P_A_values = []
 for N in N_values:
